@@ -1,0 +1,40 @@
+Ticket Online
+
+Bonjour, nous avons été contactés par différents organisateurs de soirées et gestionnaires de salles : concerts, spectacles et autre afin de leur faire une gestion de spectacles et de vente de billets et gestion des places.
+
+Ces logiciels, devront permettre :
+
+Au niveau web :
+
+·         Présentation des spectacles, concerts, etc.
+
+·         Enregistrement des clients
+
+·         Réservation de billets + payement
+
+·         Commentaires sur les événements (réserver aux personnes identifiées)
+
+Au niveau WPF/MVVM
+
+·         Gestion des spectacles
+
+·         Gestion des comptes utilisateurs (Désactivation et réactivation)
+
+·         Modération des commentaires + possibilité de réponses
+
+·         Visualisation de l’historique des payements
+
+Le tout devra se faire en N-Tiers càd
+
+·         Une base de données 
+
+·         Une Web Api en .Net Core (dont l’accès est sécurisé avec JWT Token)
+
+·         Une application web en ASP MVC Core pour la partie publique
+
+·         Une application WPF / MVVM pour l’administration
+
+Le design devra être soigné aussi bien pour le site web que pour l’application wpf (user friendly)
+
+Les mots de passe, information de payements (informations de cartes bancaire, paypal etc.) devront être cryptées de bout en bout, depuis les contrôleurs ASP/MVC jusqu’en DB ou le mot de passe sera hashé et les données sensibles seront cryptées (Clé asymétrique).
+
