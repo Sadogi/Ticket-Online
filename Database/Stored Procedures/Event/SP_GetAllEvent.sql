@@ -1,0 +1,6 @@
+﻿CREATE PROCEDURE [dbo].[SP_GetAllEvent]
+AS
+BEGIN
+	SELECT *
+	FROM [Event]
+END

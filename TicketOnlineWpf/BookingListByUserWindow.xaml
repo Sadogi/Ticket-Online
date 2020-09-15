@@ -1,0 +1,38 @@
+﻿<Window x:Class="TicketOnlineWpf.BookingListByUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicketOnlineWpf"
+        mc:Ignorable="d"
+        Title="BookingListByUserWindow" Height="450" Width="800"
+        DataContext="{StaticResource BookingListByUser}">
+    <Grid>
+        <StackPanel>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Content="{Binding Event}"/>
+            <DataGrid ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="User" Width="*" Binding="{Binding User}" />
+                    <DataGridTextColumn Header="Email" Width="*" Binding="{Binding Email}" />
+                    <DataGridTextColumn Header="PurchaseDate" Width="*" Binding="{Binding PurchaseDate}" />
+                    <DataGridTextColumn Header="TicketsPurchased" Width="*" Binding="{Binding TicketsPurchased}" />
+                    <DataGridTextColumn Header="Amount" Width="*" Binding="{Binding Amount}" />
+                    <!--<DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="&#xE149;" FontFamily="Segoe UI Symbol" Command="{Binding DetailsCommand}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="&#xE107;" FontFamily="Segoe UI Symbol" Command="{Binding DeleteCommand}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

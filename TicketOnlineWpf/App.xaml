@@ -1,0 +1,13 @@
+﻿<Application x:Class="TicketOnlineWpf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TicketOnlineWpf"
+             xmlns:vm="clr-namespace:TicketOnlineWpf.ViewModels"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <vm:MainViewModel x:Key="Main"/>
+        <vm:EventListViewModel x:Key="EventList"/>
+        <vm:UserListViewModel x:Key="UserList"/>
+        <vm:BookingListByUserViewModel x:Key="BookingListByUser"/>
+    </Application.Resources>
+</Application>

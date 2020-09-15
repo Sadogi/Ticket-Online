@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MVVMTools\MVVMTools.csproj" />
+    <ProjectReference Include="..\PatternTools\PatternTools.csproj" />
+    <ProjectReference Include="..\TicketOnline.Interfaces\TicketOnline.Interfaces.csproj" />
+    <ProjectReference Include="..\TicketOnline.Models.Data\TicketOnline.Models.Data.csproj" />
+    <ProjectReference Include="..\TicketOnline.Models.Global\TicketOnline.Models.Global.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,135 @@
+﻿@model TicketOnlineWeb.Models.Event.EventWithComment
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Event details</h1>
+<hr />
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Organizer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Organizer)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        @if (!(Model.Location is null))
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Location)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Location)
+            </dd>
+        }
+        @if (!(Model.Tickets is null))
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Tickets)
+            </dt>
+            @if (Model.Tickets > 0)
+            {
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Tickets)
+                </dd>
+            }
+            @if (Model.Tickets == 0)
+            {
+                <dd class="col-sm-10">
+                    Sold Out
+                </dd>
+            }
+        }
+        @if (!(Model.Price is null))
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+        }
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @((!(Model.Description is null)) ? Html.DisplayFor(model => model.Description) : Html.Raw("Will give more information as soon as possible :)"))
+        </dd>
+    </dl>
+</div>
+<div>
+    @if (ViewBag.IsLogged)
+    {
+        @if (Model.Tickets > 0)
+        {
+            @Html.ActionLink("Book", "Book", new { id = Model.Id, price = Model.Price });
+            <span> | </span>
+        }
+        @*@Html.ActionLink("Comment", "Comment", new { id = Model.Id });*@
+    }
+    <a asp-action="Index">Back to List</a>
+</div>
+<p></p>
+
+<h4>Comments</h4>
+<hr />
+
+@if(ViewBag.IsLogged)
+{
+<p>
+    <a asp-controller="Event" asp-action="Comment" asp-route-id="@ViewBag.EventId">Leave a comment</a>
+</p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th> User </th>
+            <th> Content </th>
+            <th> Date </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CommentList) {
+        <tr>
+            <td>
+                @item.User
+            </td>
+            <td>
+                @item.Content
+            </td>
+            <td>
+                @item.Date
+            </td>
+            <td>
+                @if (item.UserId == ViewBag.UserId)
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }); <span>|</span>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id });
+                }             
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+

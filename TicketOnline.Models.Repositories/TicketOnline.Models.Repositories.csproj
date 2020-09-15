@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TicketOnline.Forms\TicketOnline.Forms.csproj" />
+    <ProjectReference Include="..\TicketOnline.Interfaces\TicketOnline.Interfaces.csproj" />
+    <ProjectReference Include="..\TicketOnline.Models.Global\TicketOnline.Models.Global.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,7 @@
+﻿CREATE PROCEDURE [dbo].[SP_DeleteEvent]
+	@Id INT
+AS
+BEGIN
+	DELETE FROM [Event] 
+	WHERE Id = @Id;
+END

@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[Comment]
+(
+	[Id] INT NOT NULL IDENTITY,
+	UserId INT NOT NULL,
+	EventId INT NOT NULL,
+	[Date] DATE NOT NULL,
+	Content NVARCHAR(MAX) NOT NULL,
+	CONSTRAINT [PK_Comment] PRIMARY KEY ([Id]),
+	CONSTRAINT [FK_UserComment] FOREIGN KEY (UserId) REFERENCES [User]([Id]),
+	CONSTRAINT [FK_EventComment] FOREIGN KEY (EventId) REFERENCES [Event]([Id])
+)

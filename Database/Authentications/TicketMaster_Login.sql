@@ -1,0 +1,1 @@
+﻿--CREATE LOGIN [TicketMaster] WITH PASSWORD = 'TicketMaster'

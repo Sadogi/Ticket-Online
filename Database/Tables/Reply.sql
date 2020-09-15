@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[Reply]
+(
+	[Id] INT NOT NULL IDENTITY,
+	UserId INT NOT NULL,
+	CommentId INT NOT NULL,
+	[Date] DATE NOT NULL,
+	Content NVARCHAR NOT NULL,
+	CONSTRAINT [PK_Reply] PRIMARY KEY ([Id]),
+	CONSTRAINT [FK_UserReply] FOREIGN KEY (UserId) REFERENCES [User]([Id]),
+	CONSTRAINT [FK_CommentReply] FOREIGN KEY (CommentId) REFERENCES [Comment]([Id])
+)

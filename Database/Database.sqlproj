@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{ca407e28-49f1-4bc7-9d0d-2e1bc462256e}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Database</RootNamespace>
+    <AssemblyName>Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Authentications" />
+    <Folder Include="Role" />
+    <Folder Include="Schemas" />
+    <Folder Include="Stored Procedures" />
+    <Folder Include="Tables" />
+    <Folder Include="Stored Procedures\Booking" />
+    <Folder Include="Stored Procedures\Comment" />
+    <Folder Include="Stored Procedures\Event" />
+    <Folder Include="Stored Procedures\Payment" />
+    <Folder Include="Stored Procedures\Reply" />
+    <Folder Include="Stored Procedures\User" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\User.sql" />
+    <Build Include="Role\AppUser.sql" />
+    <Build Include="Schemas\TicketOnlineApp.sql" />
+    <Build Include="Authentications\TicketMaster_Login.sql" />
+    <Build Include="Authentications\TicketMaster_User.sql" />
+    <Build Include="Authentications\GetPostSalt.sql" />
+    <Build Include="Authentications\GetPreSalt.sql" />
+    <Build Include="Tables\Event.sql" />
+    <Build Include="Tables\Booking.sql" />
+    <Build Include="Tables\Comment.sql" />
+    <Build Include="Tables\PaymentMethod.sql" />
+    <Build Include="Tables\Reply.sql" />
+    <Build Include="Stored Procedures\Booking\SP_CreateBooking.sql" />
+    <Build Include="Stored Procedures\Comment\SP_CreateComment.sql" />
+    <Build Include="Stored Procedures\Event\SP_CreateEvent.sql" />
+    <Build Include="Stored Procedures\Payment\SP_CreatePaymentMethod.sql" />
+    <Build Include="Stored Procedures\Reply\SP_CreateReply.sql" />
+    <Build Include="Stored Procedures\User\SP_CreateUser.sql" />
+    <Build Include="Stored Procedures\Booking\SP_DeleteBooking.sql" />
+    <Build Include="Stored Procedures\Comment\SP_DeleteComment.sql" />
+    <Build Include="Stored Procedures\Event\SP_DeleteEvent.sql" />
+    <Build Include="Stored Procedures\Payment\SP_DeletePaymentMethod.sql" />
+    <Build Include="Stored Procedures\Reply\SP_DeleteReply.sql" />
+    <Build Include="Stored Procedures\User\SP_DeleteUser.sql" />
+    <Build Include="Stored Procedures\Reply\SP_GetAllCommentReply.sql" />
+    <Build Include="Stored Procedures\Event\SP_GetAllEvent.sql" />
+    <Build Include="Stored Procedures\Booking\SP_GetAllEventBooking.sql" />
+    <Build Include="Stored Procedures\Comment\SP_GetAllEventComment.sql" />
+    <Build Include="Stored Procedures\Payment\SP_GetAllPaymentMethod.sql" />
+    <Build Include="Stored Procedures\User\SP_GetAllUser.sql" />
+    <Build Include="Stored Procedures\Booking\SP_GetAllUserBooking.sql" />
+    <Build Include="Stored Procedures\Comment\SP_GetAllUserComment.sql" />
+    <Build Include="Stored Procedures\Reply\SP_GetAllUserReply.sql" />
+    <Build Include="Stored Procedures\Payment\SP_GetPaymentMethod.sql" />
+    <Build Include="Stored Procedures\Payment\SP_UpdatePaymentMethod.sql" />
+    <Build Include="Stored Procedures\Reply\SP_GetReply.sql" />
+    <Build Include="Stored Procedures\Reply\SP_UpdateReply.sql" />
+    <Build Include="Stored Procedures\User\SP_GetUser.sql" />
+    <Build Include="Stored Procedures\User\SP_UpdateUser.sql" />
+    <Build Include="Stored Procedures\User\SP_RegisterUser.sql" />
+    <Build Include="Stored Procedures\User\SP_LoginUser.sql" />
+    <Build Include="Stored Procedures\Event\SP_GetEvent.sql" />
+    <Build Include="Stored Procedures\Event\SP_UpdateEvent.sql" />
+    <Build Include="Stored Procedures\Comment\SP_GetComment.sql" />
+    <Build Include="Stored Procedures\Comment\SP_UpdateComment.sql" />
+    <Build Include="Stored Procedures\Booking\SP_GetBooking.sql" />
+    <Build Include="Stored Procedures\Booking\SP_UpdateBooking.sql" />
+    <Build Include="Stored Procedures\User\SP_UpdatePasswd.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Database.publish.xml" />
+  </ItemGroup>
+</Project>

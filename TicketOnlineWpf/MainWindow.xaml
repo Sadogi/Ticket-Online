@@ -1,0 +1,44 @@
+﻿<Window x:Class="TicketOnlineWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicketOnlineWpf"
+        xmlns:vm="clr-namespace:TicketOnlineWpf.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        DataContext="{Binding Source={StaticResource Main}}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Border Background="Azure" Grid.Row="0" BorderBrush="DarkViolet" BorderThickness="6" Grid.ColumnSpan="3" />
+        <Border Background="Red"  Grid.Row="1" BorderBrush="Black" BorderThickness="1,0,1,1" Grid.ColumnSpan="3" />
+        <Border Background="Aquamarine" Grid.Row="2" BorderBrush="Black" BorderThickness="1,0,1,1" Grid.ColumnSpan="3" />
+        <Border Background="violet" Grid.Row="3" BorderBrush="Black" BorderThickness="1,0,1,1" Grid.ColumnSpan="3" />
+        <Border Background="Chartreuse" Grid.Row="4" BorderBrush="Black" BorderThickness="1,0,1,1" Grid.ColumnSpan="3" />
+        
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" FontWeight="Bold" Grid.ColumnSpan="3">Ticket Online</Label>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="40" FontWeight="DemiBold" Grid.Column="0" Grid.Row="1" >List of Events</Label>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="40" FontWeight="DemiBold" Grid.Column="0" Grid.Row="2" >List of Users</Label>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="40" FontWeight="DemiBold" Grid.Column="0" Grid.Row="3" >List of Comments</Label>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="40" FontWeight="DemiBold" Grid.Column="0" Grid.Row="4" >List of Bookings</Label>
+
+        <Button Background="PaleGreen" Content="&#x1f3a6;" VerticalAlignment="center" FontFamily="Segoe UI Symbol" FontSize="70" FontWeight="DemiBold" Command="{Binding EventListCommand}" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" />
+        <Button Background="PaleGreen" Content="&#xE125;" VerticalAlignment="center" FontFamily="Segoe UI Symbol" FontSize="70" FontWeight="DemiBold" Command="{Binding UserListCommand}" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2"  />
+        <Button Background="PaleGreen" Content="&#xE13D;" FontFamily="Segoe UI Symbol" FontWeight="DemiBold" FontSize="50" Command="{Binding CommentListByUserCommand}" Grid.Column="1" Grid.Row="3" />
+        <Button Background="PaleGreen" Content="&#x1f3a6;" FontFamily="Segoe UI Symbol" FontWeight="DemiBold" FontSize="50" Command="{Binding CommentListCommand}" Grid.Column="2" Grid.Row="3" />
+        <Button Background="PaleGreen" Content="&#xE13D;" FontFamily="Segoe UI Symbol" FontWeight="DemiBold" FontSize="50" Command="{Binding BookingListByUserCommand}" Grid.Column="1" Grid.Row="4" />
+        <Button Background="PaleGreen" Content="&#x1f3a6;" FontFamily="Segoe UI Symbol" FontWeight="DemiBold" FontSize="50" Command="{Binding BookingListCommand}" Grid.Column="2" Grid.Row="4" />
+
+    </Grid>
+</Window>
